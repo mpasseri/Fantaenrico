@@ -1,0 +1,2 @@
+serviceClass: it.fantaenrico.client.GreetingService
+path: BB21E13BE0C9DB6D4D5E3E2A6A8F3942.gwt.rpc
