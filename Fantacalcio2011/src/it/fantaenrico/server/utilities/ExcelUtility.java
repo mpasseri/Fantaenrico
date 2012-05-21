@@ -55,9 +55,9 @@ public class ExcelUtility {
 					}
 
 				// Set the actual quotation of the player
-				player.setCurrent_value(Integer.valueOf(quotazione.getContents()));
+				player.setCurrentvalue(Integer.valueOf(quotazione.getContents()));
 				// Set the initial quotation of the player
-				player.setInitial_value(Integer.valueOf(quotazioneIniziale.getContents()));
+				player.setInitialvalue(Integer.valueOf(quotazioneIniziale.getContents()));
 
 				players.add(player);
 			}

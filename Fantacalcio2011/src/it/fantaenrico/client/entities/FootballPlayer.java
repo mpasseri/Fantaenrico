@@ -5,17 +5,30 @@ import javax.persistence.*;
 @Entity
 public class FootballPlayer {
 	
+	private long uidfootballplayer;
+	
+	private String name;
+	
+	private double initialvalue;
+	private double currentvalue;
+	
+	@Enumerated(EnumType.STRING)
+	private FootballTeam team;
+	
+	@Enumerated(EnumType.STRING)
+	private FootballPlayerRole role;
+	
 	@Id
-	String name;
-	
-	int initial_value;
-	int current_value;
-	
-	@Enumerated(EnumType.STRING)
-	FootballTeam team;
-	
-	@Enumerated(EnumType.STRING)
-	FootballPlayerRole role;
+	@SequenceGenerator(name="FOOTBALLPLAYER_UIDTEAMPLAYER_GENERATOR", sequenceName="FE_SEQ_FOOTBALLPLAYER")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="FOOTBALLPLAYER_UIDTEAMPLAYER_GENERATOR")
+	@Column(unique=true, nullable=false, precision=19)
+	public long getUidfootballplayer() {
+		return this.uidfootballplayer;
+	}
+
+	public void setUidfootballplayer(long uidfootballplayer) {
+		this.uidfootballplayer = uidfootballplayer;
+	}
 
 	public String getName() {
 		return name;
@@ -25,20 +38,20 @@ public class FootballPlayer {
 		this.name = name;
 	}
 
-	public int getInitial_value() {
-		return initial_value;
+	public double getInitialvalue() {
+		return initialvalue;
 	}
 
-	public void setInitial_value(int initialValue) {
-		initial_value = initialValue;
+	public void setInitialvalue(int initialvalue) {
+		this.initialvalue = initialvalue;
 	}
 
-	public int getCurrent_value() {
-		return current_value;
+	public double getCurrentvalue() {
+		return currentvalue;
 	}
 
-	public void setCurrent_value(int currentValue) {
-		current_value = currentValue;
+	public void setCurrentvalue(int currentvalue) {
+		this.currentvalue = currentvalue;
 	}
 
 	public FootballTeam getTeam() {
@@ -59,7 +72,7 @@ public class FootballPlayer {
 	
 	@Override
 	public String toString() {
-		return name + " (" + role + ", " + team + ", " + current_value + ")";
+		return name + " (" + role + ", " + team + ", " + currentvalue + ")";
 	}
 	
 

@@ -13,9 +13,9 @@ public class LeagueTeam {
 	private League league;
 	private int remaining_budget;
 	/* Arrays representing the players in a squad divided by role */
-	private FootballPlayer[] goalkeepers;
-	private FootballPlayer[] defenders;
-	private FootballPlayer[] midfielders;
-	private FootballPlayer[] forwards;
+	private TeamPlayer[] goalkeepers;
+	private TeamPlayer[] defenders;
+	private TeamPlayer[] midfielders;
+	private TeamPlayer[] forwards;
 
 }
