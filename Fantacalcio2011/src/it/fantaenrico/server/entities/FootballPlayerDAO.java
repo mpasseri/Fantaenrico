@@ -2,7 +2,7 @@ package it.fantaenrico.server.entities;
 
 import it.fantaenrico.client.entities.FootballPlayer;
 import it.fantaenrico.client.entities.FootballTeam;
-import it.fantaenrico.server.persistence.EMF;
+import it.fantaenrico.server.persistence.PersistenceManager;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class FootballPlayerDAO {
 	}
 
 	public void insert(FootballPlayer player) {
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			em.persist(player);
@@ -32,7 +32,7 @@ public class FootballPlayerDAO {
 	}
 
 	public void insert(List<FootballPlayer> players) {
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			for(FootballPlayer player : players)
@@ -47,7 +47,7 @@ public class FootballPlayerDAO {
 	}
 
 	public void delete(FootballPlayer player) {
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			em.remove(player);
@@ -61,7 +61,7 @@ public class FootballPlayerDAO {
 	}
 
 	public void delete(List<FootballPlayer> players) {
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			for(FootballPlayer player : players)
@@ -78,7 +78,7 @@ public class FootballPlayerDAO {
 	@SuppressWarnings("unchecked")
 	public List<FootballPlayer> retrieveAll() {
 
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			String qString = "Select fp from "+footballPlayerClassName+ " fp";
@@ -97,7 +97,7 @@ public class FootballPlayerDAO {
 	@SuppressWarnings("unchecked")
 	public List<FootballPlayer> retrieveByTeam(FootballTeam team) {
 
-		EntityManager em = EMF.get().createEntityManager();
+		EntityManager em = PersistenceManager.get().createEntityManager();
 		em.getTransaction().begin();
 		try {
 			String qString = "Select fp from "+footballPlayerClassName+" fp " +

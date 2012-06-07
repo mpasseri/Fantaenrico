@@ -1,4 +1,4 @@
-package it.fantaenrico.client.model;
+package it.fantaenrico.client.entities;
 
 public enum Scheme {
 	

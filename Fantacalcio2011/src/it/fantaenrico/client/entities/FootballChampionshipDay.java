@@ -1,5 +1,8 @@
-package it.fantaenrico.client.model;
+package it.fantaenrico.client.entities;
 
+import it.fantaenrico.client.model.FootballMatch;
+
+import java.util.Date;
 import java.util.List;
 
 public enum FootballChampionshipDay {
@@ -12,11 +15,12 @@ public enum FootballChampionshipDay {
 	ThirtyThree(33),ThirtyFour(34),ThirtyFive(35),ThirtySix(36),ThirtySeven(37),
 	ThirtyEight(38);
 	
-	final int day_number;
+	final int daynumber;
+	private Date firstmatchdate; // The date of start of the first match of the day
 	private List<FootballMatch> matches;
 	
-	FootballChampionshipDay(int day_number) {
-		this.day_number=day_number;
+	FootballChampionshipDay(int daynumber) {
+		this.daynumber=daynumber;
 	}
 
 }

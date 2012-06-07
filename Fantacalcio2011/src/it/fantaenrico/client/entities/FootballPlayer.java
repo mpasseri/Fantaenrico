@@ -30,6 +30,7 @@ public class FootballPlayer {
 		this.uidfootballplayer = uidfootballplayer;
 	}
 
+	@Column(unique=true)
 	public String getName() {
 		return name;
 	}
@@ -38,6 +39,7 @@ public class FootballPlayer {
 		this.name = name;
 	}
 
+	@Column(length=3)
 	public double getInitialvalue() {
 		return initialvalue;
 	}
@@ -46,6 +48,7 @@ public class FootballPlayer {
 		this.initialvalue = initialvalue;
 	}
 
+	@Column(length=3)
 	public double getCurrentvalue() {
 		return currentvalue;
 	}

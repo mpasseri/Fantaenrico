@@ -1,5 +1,7 @@
 package it.fantaenrico.client.model;
 
+import it.fantaenrico.client.entities.FootballChampionshipDay;
+
 public abstract class Day {
 	
 	private int number;
